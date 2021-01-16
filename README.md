@@ -12,7 +12,7 @@
 - **Clone** or download source code from this repo.
 - **Open** with visual studio 2019 or VS code.
 - **Run** script file from **DB script** folder to your Microsoft SQL Database.
-- **Change** your database credentials to appsetting in code.
+- **Change** your database credentials to appsettings in code.
 
 # What you'll Learn
 With **server-side processing enabled, all paging, searching, ordering actions** that DataTables performs are handed off to a server where an SQL Server.
