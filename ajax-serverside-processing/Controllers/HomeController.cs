@@ -23,7 +23,7 @@ namespace ajax_serverside_processing.Controllers
             return View();
         }
 
-        public async Task<IActionResult> LoadShippingDataAsync()
+        public async Task<IActionResult> LoadShippingData()
         {
             try
             {
