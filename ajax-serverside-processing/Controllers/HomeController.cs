@@ -44,7 +44,7 @@ namespace ajax_serverside_processing.Controllers
                 int skip = start != null ? Convert.ToInt32(start) : 0;
                 int recordsTotal = 0;
 
-                // Getting all Customer data
+                // Getting all data
                 IEnumerable<ShippingTb> _dataList = await _dbContext.ShippingTb.ToListAsync();
 
                 //Sorting
