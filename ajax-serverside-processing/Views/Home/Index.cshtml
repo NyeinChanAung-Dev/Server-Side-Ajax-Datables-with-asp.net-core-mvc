@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container-fluid">
+    <div class="card card-custom">
+        <div class="card-header">
+            <div class="card-title">
+                <span class="card-icon">
+                    <i class="flaticon2-supermarket text-primary"></i>
+                </span>
+                <h3 class="card-label">Ajax Sourced Server-side Processing</h3>
+            </div>
+        </div>
+        <div class="card-body">
+            <!--begin: Datatable-->
+            <div style="width:100%; margin:0 auto;">
+                <table id="dataTable" class="table table-bordered table-hover table-checkable dataTable no-footer dtr-inline" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>OrderId</th>
+                            <th>Country</th>
+                            <th>ShipAddress</th>
+                            <th>CompanyName</th>
+                            <th>ShipDate</th>
+                            <th>Status</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <!--end: Datatable-->
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <link rel="stylesheet" type="text/css" href="~/assets/datatable/datatables.bundle.css" />
+    <script type="text/javascript" src="~/assets/datatable/datatables.bundle.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            DatatablesDataSourceAjaxServer.init();
+        });
+
+        var DatatablesDataSourceAjaxServer = {
+            init: function () {
+                $("#dataTable").DataTable(
+                    {
+                        responsive: !0,
+                        searchDelay: 500,
+                        processing: !0,
+                        serverSide: !0,
+                        ajax: {
+                            url: '@Url.Action("LoadShippingData", "Home")',
+                            type: "POST",
+                            data: {
+                                columnsDef: ["OrderId", "Country", "ShipAddress", "CompanyName", "ShipDate", "Status", "Type"]
+                            }
+                        },
+                        columns: [
+                            { data: "OrderId" },
+                            { data: "Country" },
+                            { data: "ShipAddress" },
+                            { data: "CompanyName" },
+                            { data: "ShipDate" },
+                            { data: "Status" },
+                            { data: "Type" }
+                        ],
+                        columnDefs: [
+                            {
+                                width: "75px",
+                                targets: -2,
+                                render: function (t, a, e, l) {
+                                    var s = {
+                                        1: { title: "Pending", class: "label-light-primary" },
+                                        2: { title: "Delivered", class: " label-light-danger" },
+                                        3: { title: "Canceled", class: " label-light-primary" },
+                                        4: { title: "Success", class: " label-light-success" },
+                                        5: { title: "Info", class: " label-light-info" },
+                                        6: { title: "Danger", class: " label-light-danger" },
+                                        7: { title: "Warning", class: " label-light-warning" }
+                                    };
+                                    return void 0 === s[t] ? t : '<span class="label label-lg font-weight-bold' + s[t].class + ' label-inline">' + s[t].title + "</span>"
+                                }
+                            },
+                            {
+                                width: "75px",
+                                targets: -1,
+                                render: function (t, a, e, l) {
+                                    var s = {
+                                        1: { title: "Online", state: "danger" },
+                                        2: { title: "Retail", state: "primary" },
+                                        3: { title: "Direct", state: "success" }
+                                    };
+                                    return void 0 === s[t] ? t : '<span class="label label-' + s[t].state +
+                                        ' label-dot mr-2"></span><span class="font-weight-bold text-' + s[t].state + '">' + s[t].title + "</span>"
+                                }
+                            }]
+                    })
+            }
+
+        };
+
+    </script>
+}
