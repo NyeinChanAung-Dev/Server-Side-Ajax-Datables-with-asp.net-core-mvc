@@ -6,3 +6,8 @@
 # What you'll Learn
 With **server-side processing enabled, all paging, searching, ordering actions** that DataTables performs are handed off to a server where an SQL Server.
 See official documentation [here](https://datatables.net/examples/data_sources/server_side.html).
+
+# Demo with image:
+
+![Demo image](https://github.com/NyeinChanAung-Dev/ServerSide-Ajax-Datables-with-Asp.net-Core-Mvc/blob/master/ajax-serverside-processing/wwwroot/img/serversidedtaspdotnetcore.png?raw=true)
+
