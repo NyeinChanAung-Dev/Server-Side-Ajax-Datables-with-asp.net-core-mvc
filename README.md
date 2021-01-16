@@ -9,4 +9,5 @@ See official documentation [here](https://datatables.net/examples/data_sources/s
 
 # Demo with image:
 
-![Demo image](https://github.com/NyeinChanAung-Dev/ServerSide-Ajax-Datables-with-Asp.net-Core-Mvc/blob/master/ajax-serverside-processing/wwwroot/img/serversidedtaspdotnetcore.png)
+![Demo image](https://github.com/NyeinChanAung-Dev/ServerSide-Ajax-Datables-with-Asp.net-Core-Mvc/blob/master/ajax-serverside-processing/wwwroot/img/serversidedtaspdotnetcore.png?raw=true)
+
