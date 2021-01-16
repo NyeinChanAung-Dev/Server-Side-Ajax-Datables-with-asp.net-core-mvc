@@ -17,15 +17,6 @@ namespace ajax_serverside_processing.Models
 
         public virtual DbSet<ShippingTb> ShippingTb { get; set; }
 
-//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//        {
-//            if (!optionsBuilder.IsConfigured)
-//            {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-//                optionsBuilder.UseSqlServer("Server=DESKTOP-01F9C8A;Initial Catalog=AjaxServerSideDb;Persist Security Info=True;User ID=sa;Password=2good2btrue;");
-//            }
-//        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ShippingTb>(entity =>
